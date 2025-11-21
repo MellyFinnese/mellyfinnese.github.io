@@ -2,3 +2,6 @@ title: "Melly"
 description: "AI, supply chain & security experiments."
 theme: jekyll-theme-slate
 show_downloads: false
+Background: #050608
+Accent: #00f2ff (neon cyan) + #ff2e88 (magenta)
+Font: monospace headings, clean sans for body
