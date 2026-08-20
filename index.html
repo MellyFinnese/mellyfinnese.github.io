@@ -1,37 +1,98 @@
 ---
 layout: default
 title: AI-BOM Inspector
+description: Security engineering for modern AI supply chains.
 ---
 
-# Meet the AI-BOM Inspector
+<style>
+  :root{--cyan:#00f2ff;--pink:#ff2e88;--bg:#050608;--panel:#0b0f14;--muted:#91a0ad;--line:rgba(0,242,255,.18)}
+  body{background:var(--bg)}
+  .hero{padding:3.5rem 0 2.5rem}
+  .eyebrow{color:var(--cyan);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem}
+  .hero h1{font-size:clamp(2.8rem,8vw,5.8rem);line-height:.95;margin:0 0 1.4rem;letter-spacing:-.05em}
+  .hero h1 span{color:var(--cyan);text-shadow:0 0 24px rgba(0,242,255,.3)}
+  .hero p{max-width:760px;font-size:1.15rem;color:#d8e0e7;line-height:1.75}
+  .hero .accent{color:var(--pink)}
+  .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+  .button{display:inline-block;padding:.8rem 1.05rem;border:1px solid var(--line);border-radius:10px;text-decoration:none;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88rem}
+  .button.primary{background:var(--cyan);color:#031014;border-color:var(--cyan);font-weight:800}
+  .button.secondary{color:#dce7ed;background:rgba(255,255,255,.02)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:2rem 0 3rem}
+  .card{background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:14px;padding:1.2rem;min-height:150px}
+  .card .label{color:var(--pink);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase}
+  .card h3{margin:.55rem 0}
+  .card p{color:var(--muted);margin:0;line-height:1.6}
+  .architecture{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.3rem;margin:2rem 0 3rem;overflow-x:auto}
+  .architecture pre{margin:0;min-width:720px;color:#c8faff;background:transparent}
+  .section-title{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--cyan);letter-spacing:.08em;text-transform:uppercase}
+  .stats{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.2rem 0 0}
+  .stat{border-left:2px solid var(--pink);padding:.45rem .9rem;background:rgba(255,46,136,.04)}
+  .stat strong{display:block;font-size:1.45rem;color:#fff}
+  .stat span{color:var(--muted);font-size:.8rem}
+  .footer-note{color:var(--muted);text-align:center;margin:3rem 0 1rem;font-size:.9rem}
+</style>
 
-AI-BOM Inspector is your command center for understanding the software that powers your supply chain. In a single view, you can surface vulnerabilities, license risks, and component health across every bill of materials (BOM) you manage.
+<section class="hero">
+  <div class="eyebrow">AI supply-chain security / independent engineering</div>
+  <h1>Meet <span>AI-BOM Inspector</span>.</h1>
+  <p>
+    A security analysis platform for understanding how modern AI systems are assembled,
+    how components relate, what can reach what, and which changes actually matter.
+    <span class="accent">Not just an inventory. A security graph for the AI stack.</span>
+  </p>
+  <div class="stats">
+    <div class="stat"><strong>152+</strong><span>passing tests</span></div>
+    <div class="stat"><strong>94.66%</strong><span>JS/TS benchmark F1</span></div>
+    <div class="stat"><strong>Rust + PyO3</strong><span>native acceleration path</span></div>
+    <div class="stat"><strong>Graph-native</strong><span>lineage + impact + attack paths</span></div>
+  </div>
+  <div class="actions">
+    <a class="button primary" href="https://github.com/MellyFinnese/AI-BOM-Inspector">View AI-BOM Inspector</a>
+    <a class="button secondary" href="https://github.com/MellyFinnese">GitHub</a>
+    <a class="button secondary" href="https://www.linkedin.com/">LinkedIn</a>
+  </div>
+</section>
 
-## Why AI-BOM Inspector?
+<h2 class="section-title">What it understands</h2>
+<div class="grid">
+  <div class="card"><div class="label">Inventory</div><h3>AI Assets</h3><p>Models, versions, datasets, artifacts, prompts, evaluations, deployments, APIs, agents and tools.</p></div>
+  <div class="card"><div class="label">Reasoning</div><h3>Risk + Graph Context</h3><p>Deterministic scoring stays authoritative while graph relationships explain blast radius and reachability.</p></div>
+  <div class="card"><div class="label">Analysis</div><h3>JS / TS Semantics</h3><p>Provider, agent, MCP, prompt-flow and taint-oriented detection across modern AI application stacks.</p></div>
+  <div class="card"><div class="label">Trust</div><h3>Evidence-Aware</h3><p>Evidence is contextualized so tests, benchmarks, docs and examples are not mistaken for production assets.</p></div>
+  <div class="card"><div class="label">Change</div><h3>Behavioral Drift</h3><p>Track topology and reachable-system changes instead of treating every modification as an isolated text diff.</p></div>
+  <div class="card"><div class="label">Enforcement</div><h3>Policy + CI</h3><p>Turn findings into explainable gates, audit evidence, SBOM exports and machine-readable security outputs.</p></div>
+</div>
 
-- **Instant visibility:** Upload a SBOM and get prioritized findings in seconds.
-- **AI-assisted analysis:** Natural-language summaries translate complex dependency data into clear actions.
-- **Governance ready:** Align with industry standards while keeping audit trails organized.
-- **Secure by design:** Built with a security-first mindset so sensitive dependency data stays protected.
+<h2 class="section-title">Architecture</h2>
+<div class="architecture"><pre>
+                    AI-BOM INSPECTOR
 
-## What you can do right now
+  Discovery ────────► AI Asset / Provenance Model
+  Python • JS/TS        Models • Data • Artifacts
+  Agents • Tools        Prompts • APIs • Deployments
+                                  │
+                     ┌────────────┴────────────┐
+                     ▼                         ▼
+              DETERMINISTIC               GRAPH / CONTEXT
+                RISK ENGINE                    LAYER
+              Evidence + Policy          Lineage • Impact
+              Severity + Scoring         Attack Paths • Drift
+                     │                         │
+                     └────────────┬────────────┘
+                                  ▼
+                        SECURITY DECISION
+                  Risk • Evidence • Explainability
+                                  │
+                                  ▼
+                    CI / SBOM / SARIF / Graph
 
-1. **Inspect a BOM:** Drop in your SBOM file to get a fast, AI-driven risk report.
-2. **Trace dependencies:** Understand how every component fits together, including transitive relationships.
-3. **Plan remediation:** Export recommended fixes and ownership details for engineering and vendor teams.
+                  Rust / PyO3 acceleration path
+</pre></div>
 
-## How it works
-
-1. **Ingest** — AI-BOM Inspector parses CycloneDX and SPDX SBOMs, normalizing component data for consistent review.
-2. **Analyze** — Vulnerabilities, licenses, and metadata are enriched with AI summaries to highlight what matters.
-3. **Decide** — Dashboard views and downloadable reports keep stakeholders aligned on risk and remediation priorities.
-
-## Built for your workflow
-
-- Works alongside existing CI/CD and supply-chain security tools.
-- Clear documentation and examples for integrating automated SBOM checks.
-- Human-friendly reports you can share with leadership, partners, and auditors.
-
-## Get updates
-
-Want to know when new capabilities drop? Star this site and check back for the latest on AI-BOM Inspector releases and integration guides.
+<h2 class="section-title">Built to be inspected</h2>
+<p>
+  The project is evidence-first: important results are traceable to concrete inputs,
+  relationships, policies, and provenance. External validation is used to find blind spots,
+  then those findings become regression coverage instead of hand-waved claims.
+</p>
+<p class="footer-note">Build it. Measure it. Explain it. Secure the AI supply chain.</p>
