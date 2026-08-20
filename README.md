@@ -1,5 +1,23 @@
-# AI-BOM Inspector
+# AI-BOM Inspector — Project Site
 
-This site highlights **AI-BOM Inspector**, a tool for surfacing security, license, and health insights from software bills of materials (SBOMs). The homepage introduces the value of the tool, its core capabilities, and how it fits into supply chain workflows.
+The GitHub Pages site for **AI-BOM Inspector**, an AI supply-chain security platform focused on discovery, provenance, graph reasoning, attack paths, behavioral drift, policy enforcement, and evidence-backed risk.
 
-The site runs on GitHub Pages using the `jekyll-theme-slate` theme with custom brand accents to match the AI-BOM Inspector look and feel.
+## Site direction
+
+The homepage is intentionally engineering-first: it highlights the architecture, measurable validation, and the distinction between deterministic risk scoring and graph/context reasoning.
+
+## Project
+
+- **AI-BOM Inspector:** https://github.com/MellyFinnese/AI-BOM-Inspector
+- **Live site:** https://mellyfinnese.github.io/
+
+## Current highlights
+
+- 152+ passing tests
+- 94.66% F1 on the 30-case JavaScript/TypeScript benchmark
+- Python + Rust/PyO3 architecture
+- AI asset and provenance modeling
+- Graph-native lineage, impact, attack-path, and drift analysis
+- Evidence-context classification for production vs. test/benchmark/docs/example references
+
+Built with GitHub Pages and Jekyll.
